@@ -29,7 +29,7 @@ def new_student(student: Student):
 @app.put("/students/{id_student}", response_model=Student)
 def edit_student(id_student: int, student: Student):
     for index in range(len(students)):
-        if id_student == students[index]:
+        if id_student == students[index].id:
             students[index] = student
             return student
     raise HTTPException(status_code=404, detail="Student not found")

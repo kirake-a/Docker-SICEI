@@ -1,21 +1,15 @@
 from typing import List
 from fastapi import FastAPI, HTTPException
 from os import environ as env
-from pydantic import BaseModel
+from model.Student import Student
 
 app = FastAPI()
 
-class Student(BaseModel):
-    id: int
-    name: str
-    matricula: str
-
 students = []
-
 
 @app.get("/")
 def root():
-    return {"details": f"Hello, World! Secret {env['MY_VARIABLE']}"}
+    return {"details": f"Hello, World with {env['MY_VARIABLE_1']} and {env['MY_VARIABLE_2']}"}
 
 @app.get("/students/", response_model=List[Student])
 def get_students():

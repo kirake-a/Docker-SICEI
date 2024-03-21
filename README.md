@@ -6,6 +6,12 @@ To build the docker image, use the following line
 docker built -t *imagename* .
 ```
 
+Let's run the container
+
+```
+docker run --network host *imagename*
+```
+
 ## Deprecated
 
 ```

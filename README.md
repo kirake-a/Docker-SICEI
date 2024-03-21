@@ -3,7 +3,7 @@
 To build the docker image, use the following line
 
 ```
-docker built -t *your-image-name*
+docker built -t *your-image-name* .
 ```
 
 ## Deprecated

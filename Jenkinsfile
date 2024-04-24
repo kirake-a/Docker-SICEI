@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Stoping all containers related to project'
                 script {
-                    sh 'docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
+                    sh 'sudo docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
                 }
             }
         }

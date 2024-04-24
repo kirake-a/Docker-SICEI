@@ -7,14 +7,14 @@ pipeline {
             steps {
                 echo 'Stoping all containers related to project'
                 script {
-                    sh 'sudo docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
+                    sh 'docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
                 }
             }
         }
         stage('Build'){
             steps{
                 echo 'Build Docker image step started'
-                sh 'sudo docker build -t sicei-${GIT_BRANCH}:1.1-${BUILD_NUMBER} .'
+                sh 'sudo docker build -t siceidocker stop" requires at least 1 argument.-${GIT_BRANCH}:1.1-${BUILD_NUMBER} .'
             }
         }
         stage('Deploy') {

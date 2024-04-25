@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Stop containers') {
+        stage('Stop all previous container') {
             steps {
                 echo 'Stoping all containers related to project'
-                sh 'docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
+                script {
+                    sh 'sudo docker ps -a | grep sicei | awk \'{print $1}\' | xargs docker stop'
+                }
             }
         }
         stage('Build') {
